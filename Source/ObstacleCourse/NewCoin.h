@@ -14,8 +14,13 @@ class OBSTACLECOURSE_API ANewCoin : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ANewCoin();
+	UPROPERTY(BlueprintReadWrite)
+	USceneComponent* RootScene;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UStaticMeshComponent* Coin;
+
+
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -23,6 +28,11 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex,
-		bool bFromSweep, const FHitResult& SweepResult);
+	UFUNCTION()
+	void BeginOverlap(UPrimitiveComponent* OverlappedComponent,
+		AActor* OtherActor,
+		UPrimitiveComponent* OtherComp,
+		int32 OtherBodyIndex,
+		bool bFromSweep,
+		const FHitResult& SweepResult);
 };
