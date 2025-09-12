@@ -51,7 +51,7 @@ void ANewCoin::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 	if (!PlayerCharacter) return;
 
 	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("Test!"));
+		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TEXT("TeSt!"));
 	}
 
 	APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
